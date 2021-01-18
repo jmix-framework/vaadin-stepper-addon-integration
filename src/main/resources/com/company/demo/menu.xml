@@ -3,6 +3,7 @@
 
     <menu id="application" caption="msg://com.company.demo/menu.application" insertBefore="administration">
         <item screen="vdnstp_User.browse" caption="msg://com.company.demo.screen.user/UserBrowse.caption"/>
+        <item screen="vdnstp_Customer.browse" caption="msg://com.company.demo.screen.customer/customerBrowse.caption"/>
     </menu>
 
 </menu-config>

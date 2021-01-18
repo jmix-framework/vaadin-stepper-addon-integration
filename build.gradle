@@ -19,6 +19,9 @@ repositories {
     maven {
         url 'https://nexus.jmix.io/repository/public'
     }
+    maven {
+        url 'https://maven.vaadin.com/vaadin-addons'
+    }
 }
 
 dependencies {
@@ -26,8 +29,7 @@ dependencies {
     implementation 'io.jmix.data:jmix-data-starter'
     implementation 'io.jmix.ui:jmix-ui-starter'
     implementation 'io.jmix.ui:jmix-ui-data-starter'
-    implementation 'io.jmix.ui:jmix-ui-themes-compiled'
-    implementation 'io.jmix.ui:jmix-ui-widgets-compiled'
+    implementation 'io.jmix.ui:jmix-ui-widgets'
     implementation 'io.jmix.security:jmix-security-starter'
     implementation 'io.jmix.security:jmix-security-ui-starter'
     implementation 'io.jmix.security:jmix-security-data-starter'
@@ -35,11 +37,22 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    implementation 'org.vaadin.addons:stepper:2.4.0'
+
     runtimeOnly 'org.hsqldb:hsqldb'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+
+    widgets 'io.jmix.ui:jmix-ui-widgets'
+    widgets 'org.vaadin.addons:stepper:2.4.0'
+
+    themes 'io.jmix.ui:jmix-ui-themes'
+}
+
+compileWidgets {
+    generate 'com.company.demo.widgets.AppWidgetSet'
 }
 
 test {
